@@ -185,7 +185,6 @@
         </div>
     </div>
 
-    <!-- Drawer for scientific functions -->
     <div class="drawer" id="drawer">
         <h3>Functions</h3>
         <div class="sci-buttons">
@@ -255,7 +254,6 @@
                                 .replace(/cos\(/g, 'Math.cos(')
                                 .replace(/tan\(/g, 'Math.tan(');
 
-                            // Auto-close open parentheses
                             const openParens = (expr.match(/\(/g) || []).length;
                             const closeParens = (expr.match(/\)/g) || []).length;
                             const diff = openParens - closeParens;
@@ -279,7 +277,7 @@
         });
 
         function handleFunction(fn) {
-            fn = fn.replace('()', ''); // Remove parentheses for logic
+            fn = fn.replace('()', '');
 
             let insert = '';
             switch (fn) {
